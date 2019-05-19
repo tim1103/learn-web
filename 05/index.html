@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:0px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+			var background = new Image();
+			background.src = "images/background.png";
+			var enemy = new Image();
+			enemy.src = "images/enemy1.png";
+			background.onload = function() {
+				//x1是飞机的x轴坐标
+				var x1 = 0;
+				//y1是飞机的y轴坐标
+				var y1 = 200;
+				//飞机最大能出现的次数
+				var c = 5;
+				//w用于记录画了几次
+				var w = 0
+				//使用定時器
+				setInterval(function() {
+					//让飞机只能出现5架
+					if (w < c) {
+						//画飞机
+						ctx.drawImage(enemy, x1, y1);
+						x1 = x1 + 50;
+						//每画一次把w的值加1
+						w = w + 1;
+					}
+				}, 1000);
+
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:0px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+			var background = new Image();
+			background.src = "images/background.png";
+			var enemy = new Image();
+			enemy.src = "images/enemy1.png";
+			background.onload = function() {
+				//x1和y1是表示背景座标的
+				var x1 = 0;
+				var y1 = 0;
+				//x2和y2是表示飞机坐标的
+				var x2 = 0;
+				var y2 = 0;
+				//使用定时器来绘制图片
+				setInterval(function() {
+					//画背景
+					ctx.drawImage(background, x1, y1);
+					//每隔100毫秒将背景的坐标加5px
+					y1 = y1 + 5;
+					//画敌飞机的图片
+					ctx.drawImage(enemy, x2, y2);
+					//每隔100毫秒将敌飞机x轴和y轴的坐标加5px
+					x2 = x2 + 5;
+					y2 = y2 + 5;
+				}, 100);
+
+			}
+		</script>
+	</body>
+</html>

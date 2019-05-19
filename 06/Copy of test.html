@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 0px; height: 0px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:0px solid red;" width="0" height="0">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			function Fruits(type, color,price) {
+				this.type = type;
+				this.color = color;
+				this.price =price;
+			}
+
+			var fruits = [new Fruits("苹果", "红色", "5"),
+			              new Fruits("梨", "浅黄色", "3"), 
+			              new Fruits("香蕉", "黄色", "4")]
+			for (var i = 0; i < fruits.length; i++) {
+
+				document.write(fruits[i].type+":");
+				document.write(fruits[i].color+",");
+				document.write(fruits[i].price+"<br/>");
+			}
+
+		</script>
+	</body>
+</html>
