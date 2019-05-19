@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:0px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			/**创建空数组number**/
+			var number = [];
+			number[0] = parseInt(prompt("请输入第一个数"));
+			number[1] = parseInt(prompt("请输入第二个数"));
+			number[2] = parseInt(prompt("请输入第三个数"));
+			var max = 0;
+			/**如果第一个数小于第二个数,把最大值找出来.**/
+			if (number[0] > number[1]) {
+				max = number[0];
+			} else {
+				max = number[1];
+			}
+			/*如果第三个数大于最大值,取出最大值.*/
+			if (number[2] > max) {
+				max = number[2];
+			} else {
+				max = max;
+			}
+			/**在警告框上显示最大数*/
+			alert("最大数为:" + max);
+		</script>
+	</body>
+</html>

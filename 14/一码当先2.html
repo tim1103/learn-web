@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:2px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			/**创建 Student构造方法,传入三个参数:name, number, score.*/
+			function Student(name, number, score) {
+				this.name = name;
+				this.number = number;
+				this.score = score;
+			}
+
+			//创建数组Students,储存学生对象,并传入参数 .
+			var students = [
+			    new Student("刘小美", 11, 99), 
+			    new Student("王小强", 3, 98), 
+			    new Student("张小利",15,97)];
+			//在警告框上显示张小利的信息.
+			alert(students[2].name + " : " + students[2].number + " , " + students[2].score);
+		</script>
+	</body>
+</html>

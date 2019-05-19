@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:0px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+
+			var background = new Image();
+			background.src = "images/background.png";
+			var sky = new Sky();
+
+			var enemy1 = new Image();
+			enemy1.src = "images/enemy1.png";
+
+			var enemy2 = new Image();
+			enemy2.src = "images/enemy2.png";
+
+			var enemy3 = new Image();
+			enemy3.src = "images/enemy3.png";
+
+			setInterval(function() {
+				sky.paint(ctx);
+				sky.step();
+
+			}, 10);
+
+			function Sky() {
+				this.img = background;
+				this.width = 480;
+				this.height = 852;
+				this.x1 = 0;
+				this.y1 = 0;
+				this.x2 = 0;
+				this.y2 = -this.height;
+				this.paint = function(ctx) {
+					ctx.drawImage(this.img, this.x1, this.y1);
+					ctx.drawImage(this.img, this.x2, this.y2);
+				}
+				this.step = function() {
+					this.y1 = this.y1 + 1;
+					this.y2 = this.y2 + 1;
+					if (this.y1 > this.height) {
+						this.y1 = -this.height;
+					}
+					if (this.y2 > this.height) {
+						this.y2 = -this.height;
+					}
+				}
+			}
+
+			function Enemy(x, y, width, height, type, life, score, img) {
+				this.x = x;
+				this.y = y;
+				this.width = width;
+				this.height = height;
+				this.type = type;
+				this.life = life;
+				this.score = score;
+				this.img = img;
+				this.paint = function(ctx) {
+					ctx.drawImage(this.img, this.x, this.y);
+				}
+				this.step = function() {
+					this.y = this.y + 2;
+				}
+			}
+
+		</script>
+	</body>
+</html>
