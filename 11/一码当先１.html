@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:0px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			/**定义带参数的构造方法Fruit(),属性包括type,color,size**/
+
+			function Fruit(type, color, size) {
+				this.type = type;
+				this.color = color;
+				this.size = size;
+				/*在Fruit构造方法中定义eat方法*/
+				this.eat = function() {
+					//在警告框上显示"吃苹果"
+					alert("吃" + this.type);
+
+				}
+			}
+
+			var food = new Fruit("苹果", "红", "2千克");
+			food.eat();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:0px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			//定义Car构造方法
+			function Pan() {
+				//在drive构造方法里定义无名构造方法
+				this.draw = function(name, type) {
+					//在警告框上显示"张小利在用水彩笔画画"
+					alert(name + "在用" + type + "画画");
+				};
+
+			}
+
+			var draw = new Pan();
+			//调用drive方法,在警告框上显示xxx在用xxx画画
+			var sName = prompt("请输入姓名:");
+			var sType = prompt("请输入笔类型:");
+
+			draw.draw(sName, sType);
+
+		</script>
+	</body>
+</html>
+

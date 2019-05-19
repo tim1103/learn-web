@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:0px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+
+			var background = new Image();
+			background.src = "images/background.png";
+
+			var enemy = new Image();
+			enemy.src = "images/enemy1.png";
+
+			var sky = new Sky();
+
+			setInterval(function() {
+				sky.paint(ctx);
+				sky.step();
+			}, 10);
+			
+
+			function Sky() {
+				this.height = 852;
+				this.width = 480;
+				this.img = background;
+				this.x1 = 0;
+				this.y1 = 0;
+				this.x2 = 0;
+				this.y2 = -this.height;
+				this.paint = function(ctx) {
+					ctx.drawImage(this.img, this.x1, this.y1);
+					ctx.drawImage(this.img, this.x2, this.y2);
+				}
+				this.step = function() {
+					this.y1 = this.y1 + 1;
+					this.y2 = this.y2 + 1;
+					if (this.y1 > this.height) {
+						this.y1 = -this.height;
+					}
+					if (this.y2 > this.height) {
+						this.y2 = -this.height;
+					}
+				}
+			}
+
+		</script>
+	</body>
+</html>

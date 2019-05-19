@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:0px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			/**定义带参数的构造方法 Shape(),属性包括type,length**/
+			function Shape(type, length) {
+				this.type = type;
+				this.length = length;
+				/*在Shape构造方法中定义eat方法*/
+				this.formule = function() {
+					//如果type的值="正方形"
+					if (this.type == "正方形") {
+						/**就在警告框上显示"长方形周长为80"**/
+						alert("正方形周长为:" + this.length * 4);
+					} else {
+						//否则就在警告框上显示"圆形周长为125.66370614359172"
+						alert("圆形周长为:" + this.length * 2 * 3.141592653589793);
+					};
+				}
+			}
+			var Shape1 = new Shape("正方形", 20);
+			Shape1.formule();
+			var Shape2 = new Shape("长方形", 20);
+			Shape2.formule();
+		</script>
+	</body>
+</html>
