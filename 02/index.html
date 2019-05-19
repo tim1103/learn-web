@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:2px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+			var enemy = new Image();
+			enemy.src = "images/enemy1.png";
+			enemy.onload = function() {
+				//声明变量s，赋值为85
+				var s = 85;
+				//平时表现得好，加十分
+				s = s + 10;
+				//在警告框上显示我的最终成绩
+				alert(s);
+
+			}
+		</script>
+	</body>
+</html>

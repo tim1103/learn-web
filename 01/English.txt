@@ -1,0 +1,4 @@
+fill  填充
+text 文本
+alert 警告
+font 字体

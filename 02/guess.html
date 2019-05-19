@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>猜数字游戏</title>
+	</head>
+	<body style="font-family: '微软雅黑'">
+		<h2 align="center">猜数字</h2>
+		<hr>
+		<div align="center">
+			请输入1-1000之间的数字：
+			<input type="text" id="guess">
+			<input type="button" value="猜一猜" id="btn">
+			<span id="result"> </span>
+		</div>
+		<script>
+			var target = parseInt(Math.random() * 1000) + 1;
+			var btn = document.getElementById("btn");
+			btn.onclick=function(){
+				var guess = document.getElementById("guess").value;
+				var result = document.getElementById("result");
+				if (guess > target) {
+					result.innerHTML = "太大了";
+				} else if (guess < target) {
+					result.innerHTML = "太小了";
+				} else if (guess==target){
+					result.innerHTML = "恭喜！猜对了";
+				} else {
+					result.innerHTML = "请输入1-1000的数字！";
+				}				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:2px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+			var enemy = new Image();
+			enemy.src = "images/enemy1.png";
+
+			enemy.onload = function() {
+				//变量x里储存的是5，变量y里储存的是8。
+				var x = 5;
+				var y = 8;
+				//变量x里储存的是13，变量y储存的是8
+				x = x + y;
+				ctx.font = "70px 楷体"
+				ctx.fillText("X1=" + x, 100, 100);
+				ctx.fillText("Y1=" + y, 100, 200);
+				//变量x里储存的是13，变量y储存的是5
+				y = x - y;
+				ctx.font = "70px 楷体"
+				ctx.fillText("X2=" + x, 100, 300);
+				ctx.fillText("Y2=" + y, 100, 400);
+				//变量x里储存的是8，变量y储存的是5
+				x = x - y;
+
+				ctx.fillText("X3=" + x, 100, 500);
+				ctx.fillText("Y3=" + y, 100, 600);
+			};
+
+		</script>
+	</body>
+</html>

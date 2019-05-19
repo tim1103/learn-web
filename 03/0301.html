@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:2px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+			var enemy = new Image();
+			enemy.src = "images/enemy1.png";
+			enemy.onload = function() {
+
+			};
+			//使用定时器，在画布上每隔一秒显示一次自己的名字。
+
+			var x = 100;
+			var y = 20;
+			setInterval(function() {
+				ctx.fillText("我的名字:章应祺", x, y);
+				y = y + 20;
+			}, 1000);
+
+		</script>
+	</body>
+</html>
