@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:2px solid red;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+			var enemy1 = new Image();
+			enemy1.src = "images/enemy1.png";
+			var enemy2 = new Image();
+			enemy2.src = "images/enemy2.png";
+			var enemy3 = new Image();
+			enemy3.src = "images/enemy3.png";
+			enemy3.onload = function() {
+				//让用户输入1-3之间的数字
+				var x = prompt("输入1-3之间的数字")
+				//使用if语句来判断
+				//x==1的时候，在警告框上显示“大家好！”
+				if (x == 1) {
+					alert("大家好！");
+					//x==2的时候，在警告框上显示“我叫章应祺”
+				} else if (x == 2) {
+					alert("我叫章应祺。")
+					//x==3的时候，在警告框上显示“我喜欢程序设计！”
+				} else if (x == 3) {
+					alert("我喜欢程序设计！")
+					//都不是的时候，显示“你输入的数字不在范围内！”
+
+				} else {
+					alert("你输入的数字不在范围内！")
+				}
+
+			}
+
+		</script>
+	</body>
+</html>
