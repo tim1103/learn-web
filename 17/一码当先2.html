@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>飞机大战</title>
+	</head>
+
+	<body>
+		<div id="stage" style="margin: 0 auto; width: 480px; height: 650px; text-align: center; vertical-align: middle" >
+			<canvas id="canvas" style="border:2px solid white;" width="480" height="650">
+				不支持画板对象
+			</canvas>
+		</div>
+		<script>
+		//输入三个数,储存到数组里.
+			var num = [];
+			num[0] = parseInt(prompt("请输入第1个数:"));
+			num[1] = parseInt(prompt("请输入第2个数:"));
+			num[2] = parseInt(prompt("请输入第3个数:"));
+			var arr = [];
+			var min = 0;
+			//判断num[0]是否小于num[1]
+			if (num[0] < num[1]) {
+				min = num[0];
+				num[0] = num[1];
+				num[1] = min;
+			}
+			//判断num[1]是否小于num[2]
+			if (num[1] < num[2]) {
+				min = num[1];
+				num[1] = num[2];
+				num[2] = min;
+			}
+			//判断num[0]是否小于num[1]
+			if (num[0] < num[1]) {
+				min = num[0];
+				num[0] = num[1];
+				num[1] = min;
+			}
+			//往数组里插入元素.
+			arr.splice(0, 0, num);
+			
+			//在警告框上显示数组arr的信息
+			alert(arr);
+		</script>
+	</body>
+</html>
